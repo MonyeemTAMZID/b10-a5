@@ -36,7 +36,7 @@ document.getElementById('btn-donate-noakhali').addEventListener('click', functio
         return;
     }
 
-    
+    document.getElementById('my_modal_5').showModal();
     
 
     
@@ -76,6 +76,7 @@ document.getElementById('btn-donate-feni').addEventListener('click', function(ev
         return;
     }
 
+    document.getElementById('my_modal_5').showModal();
     
 })
 
@@ -114,6 +115,8 @@ document.getElementById('btn-donate-qouta-protest').addEventListener('click', fu
         alert('failed to add money!!');
         return;
     }
+
+    document.getElementById('my_modal_5').showModal();
 
     
 })
