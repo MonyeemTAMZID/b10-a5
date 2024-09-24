@@ -25,7 +25,7 @@
         background-color: rgba(249, 247, 243, 1);
         /* transition: backdrop-filter 0.3s ease, background-color 0.3s ease; */
       }
-      .popup {
+      /* .popup {
         padding: 0 30px 30px;
         border-radius: 2rem;
         position: absolute;
@@ -45,7 +45,7 @@
         transform: translate(-50%, -50%) scale(1);
 
         overflow: hidden;
-      }
+      } */
     </style>
 
     <script>
@@ -167,7 +167,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-noakhali"
-                  onclick="openPopUp()"
+                  onclick="my_modal_5.showModal()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -219,7 +219,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-feni"
-                  onclick="openPopUp()"
+                  onclick="my_modal_5.showModal()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -280,7 +280,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-qouta-protest"
-                  onclick="openPopUp()"
+                  onclick="my_modal_5.showModal()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -291,18 +291,26 @@
         </section>
       </section>
       <!-- pop-up-section -->
-      <div
-        id="pop-up"
-        class="popup flex flex-col justify-center items-center text-center"
-      >
-        <h1 class="font-bold text-3xl">CONGRATS!</h1>
-        <br />
-        <img src="assets/coin.png" alt="" />
-        <p class="text-lg text-gray-400">You Have Donated For HumanKind</p>
-        <h2 class="text-xl font-bold">Successfully</h2>
-        <button onclick="closePopUp()" class="btn font-bold">Close</button>
-      </div>
+      <div>
+        <!-- Open the modal using ID.showModal() method -->
 
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div
+            class="modal-box flex flex-col justify-center items-center text-center"
+          >
+            <h3 class="text-2xl font-bold">Congrats!</h3>
+            <img src="assets/coin.png" alt="" />
+            <p class="py-4">You have donated for HumanKind</p>
+            <p class="py-4 text-xl font-bold">Successfully</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
       <!--Donation history container-->
       <div id="donation-section" class="hidden">
         <h2 class="text-center text-3xl">Donation History</h2>
@@ -318,7 +326,7 @@
     <script src="js/addmoney.js"></script>
     <script src="js/features.js"></script>
     <script src="js/blog.js"></script>
-    <script>
+    <!-- <script>
       let popup = document.getElementById("pop-up");
 
       function openPopUp() {
@@ -328,6 +336,6 @@
       function closePopUp() {
         popup.classList.remove("open-popup");
       }
-    </script>
+    </script> -->
   </body>
 </html>

@@ -3,32 +3,35 @@ document.getElementById('btn-donate-noakhali').addEventListener('click', functio
     event.preventDefault();
 
 
-    const addMoneyN = getInputFieldByValue('noakhali-add-money');
-    const increaseBalanceN = getTextFieldValueById('noakhali-balance');
+    const addMoney = getInputFieldByValue('noakhali-add-money');
+    const increaseBalance = getTextFieldValueById('noakhali-balance');
     // minus from total balance
     const totalBalance = getTextFieldValueById('balance');
      // check if money donated is more than balance:
-     if(addMoneyN > totalBalance){
+     if(addMoney > totalBalance){
         alert('not enough money!!');
         return;
     }
 
     
 
-    const balancePostDonation = totalBalance - addMoneyN;
+    const balancePostDonation = totalBalance - addMoney;
 
     document.getElementById('balance').innerText = balancePostDonation;
     
     
 
-    const newNoakhaliBalance = addMoneyN + increaseBalanceN;
+    const newNoakhaliBalance = addMoney + increaseBalance;
 
     document.getElementById('noakhali-balance').innerText = newNoakhaliBalance +' BDT';
+
+    // add to donation history:
+    addDonation(addMoney,'For Flood relief to Noakhali');
 
     
 
     // check if input is integer:
-    if(isNaN(addMoneyN)){
+    if(isNaN(addMoney)){
         alert('failed to Donate money!!');
         return;
     }
@@ -48,24 +51,27 @@ document.getElementById('btn-donate-feni').addEventListener('click', function(ev
     event.preventDefault();
 
 
-    const addMoneyF = getInputFieldByValue('feni-add-money');
-    const increaseBalanceF = getTextFieldValueById('feni-balance');
+    const addMoney = getInputFieldByValue('feni-add-money');
+    const increaseBalance = getTextFieldValueById('feni-balance');
     // minus from total balance
     const totalBalance = getTextFieldValueById('balance');
     // check if money donated is more than balance:
-    if(addMoneyF > totalBalance){
+    if(addMoney > totalBalance){
         alert('not enough money!!');
         return;
     }
-    const balancePostDonation = totalBalance - addMoneyF;
+    const balancePostDonation = totalBalance - addMoney;
 
     document.getElementById('balance').innerText = balancePostDonation;
 
-    const newFeniBalance = addMoneyF + increaseBalanceF;
+    const newFeniBalance = addMoney + increaseBalance;
 
     document.getElementById('feni-balance').innerText = newFeniBalance +' BDT';
 
-    if(isNaN(addMoneyF)){
+    // add to donation history:
+    addDonation(addMoney,'For Flood relief to Feni');
+
+    if(isNaN(addMoney)){
         alert('failed to add money!!');
         return;
     }
@@ -78,12 +84,12 @@ document.getElementById('btn-donate-qouta-protest').addEventListener('click', fu
     event.preventDefault();
 
 
-    const addMoneyQ = getInputFieldByValue('quota-protest-add-money');
-    const increaseBalanceQ = getTextFieldValueById('quota-protest-balance');
+    const addMoney = getInputFieldByValue('quota-protest-add-money');
+    const increaseBalance = getTextFieldValueById('quota-protest-balance');
     // minus from total balance
     const totalBalance = getTextFieldValueById('balance');
 
-    if(addMoneyQ > totalBalance){
+    if(addMoney > totalBalance){
         
         alert('not enough money!!');
         document.getElementById('quota-protest-balance').innerText = '0 BDT';
@@ -91,15 +97,20 @@ document.getElementById('btn-donate-qouta-protest').addEventListener('click', fu
     }
 
     
-    const balancePostDonation = totalBalance - addMoneyQ;
+    const balancePostDonation = totalBalance - addMoney;
 
     document.getElementById('balance').innerText = balancePostDonation;
 
-    const newQoutaBalance = addMoneyQ + increaseBalanceQ;
+    const newQoutaBalance = addMoney + increaseBalance;
 
     document.getElementById('quota-protest-balance').innerText = newQoutaBalance +' BDT';
 
-    if(isNaN(addMoneyQ  )){
+    
+
+    // add to donation history:
+    addDonation(addMoney,'For qouta protest police brutality victims');
+
+    if(isNaN(addMoney  )){
         alert('failed to add money!!');
         return;
     }

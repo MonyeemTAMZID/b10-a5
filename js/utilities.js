@@ -23,3 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+
+//   function for Donation history:
+function addDonation (amount, reason){
+    const donationContainer = document.getElementById('donation-container');
+    const donationElement = document.createElement('div');
+    const date = new Date();
+    const dateTime = date.toLocaleDateString();
+    donationElement.classList.add('p-4', 'bg-gray-100', 'rounded-lg');
+    donationElement.innerHTML = `
+        <h2 class ='font-bold text-2xl' >Donated ${amount} BDT for ${reason}</h2>
+        <p> the date is ${date}</p>
+        
+    `
+    donationContainer.appendChild(donationElement);
+}
+
