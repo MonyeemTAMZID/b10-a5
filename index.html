@@ -25,6 +25,27 @@
         background-color: rgba(249, 247, 243, 1);
         /* transition: backdrop-filter 0.3s ease, background-color 0.3s ease; */
       }
+      .popup {
+        padding: 0 30px 30px;
+        border-radius: 2rem;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        visibility: hidden;
+        backdrop-filter: blur(100px);
+        background-color: rgba(249, 247, 243, 1);
+        transition: transform 0.4s, top 0.4s;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .open-popup {
+        visibility: visible;
+        top: 80%;
+        transform: translate(-50%, -50%) scale(1);
+
+        overflow: hidden;
+      }
     </style>
 
     <script>
@@ -72,7 +93,10 @@
                 <li><a>Item 3</a></li>
               </ul>
             </div>
-            <button class="text-lg btn font-bold bg-[#B4F461] px-8 py-3">
+            <button
+              id="btn-blog"
+              class="text-lg btn font-bold bg-[#B4F461] px-8 py-3"
+            >
               Blog
             </button>
           </div>
@@ -91,17 +115,15 @@
       <!-- donation and history btns -->
       <div class="flex justify-center items-center my-20 space-x-4">
         <button id="btn-donate" class="btn bg-[#B4F461]">Donation</button>
-        <button id="btn-donate-history" class="btn bg-[#B4F461]">
-          History
-        </button>
+        <button id="btn-donate-history" class="btn">History</button>
       </div>
     </header>
-    <main class="space-y-8">
+    <main class="mb-8">
       <!-- donation form container -->
-      <section id="donation-form" class="hidden">
+      <section id="donation-form" class="">
         <!-- Donate for Flood at Noakhali, Bangladesh section -->
         <section
-          class="flex flex-col justify-center items-center lg:flex-row mx-auto gap-3 border-gray-700"
+          class="flex mb-3 flex-col justify-center items-center lg:flex-row mx-auto gap-3 border-gray-700"
         >
           <div class="card lg:card-side bg-base-100 shadow-xl w-full lg:w-auto">
             <figure class="p-6">
@@ -145,6 +167,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-noakhali"
+                  onclick="openPopUp()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -155,7 +178,7 @@
         </section>
         <!-- Donate for Flood Relief in Feni,Bangladesh section -->
         <section
-          class="flex flex-col justify-center items-center lg:flex-row mx-auto gap-3 border-gray-700"
+          class="flex mb-3 flex-col justify-center items-center lg:flex-row mx-auto gap-3 border-gray-700"
         >
           <div class="card lg:card-side bg-base-100 shadow-xl w-full lg:w-auto">
             <figure class="p-6">
@@ -196,6 +219,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-feni"
+                  onclick="openPopUp()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -256,6 +280,7 @@
               <div class="flex justify-center items-center">
                 <button
                   id="btn-donate-qouta-protest"
+                  onclick="openPopUp()"
                   class="text-lg w-full lg:w-[522px] font-bold btn bg-[#B4F461]"
                 >
                   Donate Now
@@ -265,19 +290,44 @@
           </div>
         </section>
       </section>
+      <!-- pop-up-section -->
+      <div
+        id="pop-up"
+        class="popup flex flex-col justify-center items-center text-center"
+      >
+        <h1 class="font-bold text-3xl">CONGRATS!</h1>
+        <br />
+        <img src="assets/coin.png" alt="" />
+        <p class="text-lg text-gray-400">You Have Donated For HumanKind</p>
+        <h2 class="text-xl font-bold">Successfully</h2>
+        <button onclick="closePopUp()" class="btn font-bold">Close</button>
+      </div>
 
-      <!--transaction history container-->
-      <div id="transaction-section" class="">
+      <!--Donation history container-->
+      <div id="donation-section" class="hidden">
         <h2 class="text-center text-3xl">Donation History</h2>
-        <div id="transaction container" class="space-y-4"></div>
+        <div id="donation-container" class="space-y-4"></div>
       </div>
     </main>
     <footer
+      id="footer"
       class="footer footer-center bg-base-200 text-base-content rounded p-10"
     ></footer>
     <footer class="bg-yellow-100"></footer>
     <script src="js/utilities.js"></script>
     <script src="js/addmoney.js"></script>
     <script src="js/features.js"></script>
+    <script src="js/blog.js"></script>
+    <script>
+      let popup = document.getElementById("pop-up");
+
+      function openPopUp() {
+        popup.classList.add("open-popup");
+      }
+
+      function closePopUp() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
   </body>
 </html>

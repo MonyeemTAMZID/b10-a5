@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .lexend {
+        font-family: "Lexend", sans-serif;
+      }
+      .header-bg {
+        backdrop-filter: blur(10px);
+        background-color: rgba(249, 247, 243, 1);
+        /* transition: backdrop-filter 0.3s ease, background-color 0.3s ease; */
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- header-section -->
+    <header class="top-0 sticky z-50 header-bg">
+      <!-- nav section: -->
+      <nav class="bg-[#F9F7F3]">
+        <div class="navbar">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Item 1</a></li>
+
+                <li><a>Item 3</a></li>
+              </ul>
+            </div>
+            <button class="text-lg btn font-bold bg-[#B4F461] px-8 py-3">
+              Blog
+            </button>
+          </div>
+          <div class="space-x-2 navbar-center hidden lg:flex">
+            <img class="w-8" src="assets/logo.png" alt="" />
+            <h1 class="text-lg font-bold menu menu-horizontal px-1">
+              Donate Bangladesh
+            </h1>
+          </div>
+          <div class="navbar-end space-x-2">
+            <img src="assets/coin.png" alt="" />
+            <h1 id="balance">5500 BDT</h1>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- faq section -->
+      <section class="py-20 overflow-hidden">
+        <div class="container m-auto">
+          <!-- text section -->
+          <div class="text-center space-y-4 lg:space-y-6 mb-7">
+            <!-- text part -->
+            <h2 class="font-extrabold text-4xl md:text-5xl">
+              Important Questions (FAQ):
+            </h2>
+
+            <p class="text-[#494949]">
+              <span class="font-bold">Answers to Your Key Questions</span>
+            </p>
+          </div>
+          <!-- Faq section -->
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-extrabold text-[#ABEF5F]">
+              How can I donate?
+            </div>
+            <div class="collapse-content">
+              <p>
+                You can donate online by selecting the specific flood relief
+                cause and entering the desired amount.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-extrabold text-[#ABEF5F]">
+              Where will my donation go?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Funds directly support essential supplies and aid for
+                flood-affected communities.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-extrabold text-[#ABEF5F]">
+              Is my donation tax-deductible?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Yes, donations are typically tax-deductible, but check local
+                laws.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-extrabold text-[#ABEF5F]">
+              Can I track how my donation is used?
+            </div>
+            <div class="collapse-content">
+              <p>
+                We provide regular updates on how funds are allocated and
+                utilized.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
