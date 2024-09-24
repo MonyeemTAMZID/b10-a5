@@ -36,7 +36,7 @@ document.getElementById('btn-donate-noakhali').addEventListener('click', functio
         return;
     }
 
-    // pop-up:
+    
     
 
     
