@@ -54,3 +54,12 @@ document.getElementById('btn-donate-qouta-protest').addEventListener('click', fu
     document.getElementById('balance').innerText = balancePostDonation;
 
 })
+
+// transaction history:
+const div = document.createElement('div');
+        div.classList.add('bg-gray-200');
+        div.innerHTML = `
+        
+        <h3 class = 'font-bold' >${addMoneyN} Taka is donated for relief for NoaKhali,Bangladesh. </h3>
+        `
+        document.getElementById('transaction container').appendChild(div);

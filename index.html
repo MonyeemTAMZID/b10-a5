@@ -26,19 +26,6 @@
         /* transition: backdrop-filter 0.3s ease, background-color 0.3s ease; */
       }
     </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const header = document.querySelector("header");
-
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-            header.classList.add("header-bg");
-          } else {
-            header.classList.remove("header-bg");
-          }
-        });
-      });
-    </script>
 
     <script>
       tailwind.config = {
@@ -103,13 +90,15 @@
       </nav>
       <!-- donation and history btns -->
       <div class="flex justify-center items-center my-20 space-x-4">
-        <button class="btn bg-[#B4F461]">Donation</button>
-        <button class="btn bg-[#B4F461]">History</button>
+        <button id="btn-donate" class="btn bg-[#B4F461]">Donation</button>
+        <button id="btn-donate-history" class="btn bg-[#B4F461]">
+          History
+        </button>
       </div>
     </header>
     <main class="space-y-8">
       <!-- donation form container -->
-      <section>
+      <section id="donation-form" class="hidden">
         <!-- Donate for Flood at Noakhali, Bangladesh section -->
         <section
           class="flex flex-col justify-center items-center lg:flex-row mx-auto gap-3 border-gray-700"
@@ -278,12 +267,17 @@
       </section>
 
       <!--transaction history container-->
-      <section>
-        <!--  -->
-      </section>
+      <div id="transaction-section" class="">
+        <h2 class="text-center text-3xl">Donation History</h2>
+        <div id="transaction container" class="space-y-4"></div>
+      </div>
     </main>
+    <footer
+      class="footer footer-center bg-base-200 text-base-content rounded p-10"
+    ></footer>
     <footer class="bg-yellow-100"></footer>
     <script src="js/utilities.js"></script>
     <script src="js/addmoney.js"></script>
+    <script src="js/features.js"></script>
   </body>
 </html>
